@@ -5,12 +5,19 @@ A C++ console application for monitoring electrical loads and calculating electr
 
 ## Features Implemented
 
-### Phase 1 (Current)
+### Phase 1 ✅
 - ✅ Appliance class with power rating and usage hours
 - ✅ Register new appliances with validation
 - ✅ View all registered appliances
 - ✅ Menu-driven console interface
 - ✅ Input validation for all fields
+
+### Phase 2 (Current) ✅
+- ✅ Energy calculation logic (kWh)
+- ✅ Search appliance by name
+- ✅ Calculate total energy consumption
+- ✅ Display daily, monthly, and yearly energy totals
+- ✅ Enhanced menu system
 
 ## How to Compile and Run
 
@@ -32,7 +39,12 @@ electrical_monitor.exe
 2. Select option 1 to register an appliance
 3. Enter appliance details (name, power rating in watts, daily usage in hours)
 4. Select option 2 to view all registered appliances
-5. Select option 3 to exit
+5. Select option 3 to search for a specific appliance by name
+6. Select option 4 to calculate total energy consumption (daily, monthly, yearly)
+7. Select option 5 to set the electricity tariff rate (per kWh)
+8. Select option 6 to calculate billing costs
+9. Select option 7 to display detailed billing summary with per-appliance breakdown
+10. Select option 8 to exit
 
 ## Data Validation
 - Appliance name cannot be empty
@@ -56,15 +68,26 @@ electrical-load-monitoring/
 - Register and view appliances functionality
 - Input validation
 
-### Phase 2 (Upcoming)
-- Energy calculation logic
-- Enhanced menu system
-- Multiple appliance management
+### Phase 2 ✅
+- ✅ Energy calculation logic (kWh)
+- ✅ Search appliance by name
+- ✅ Calculate total energy consumption
+- ✅ Display daily, monthly, and yearly energy totals
+- ✅ Enhanced menu system
 
-### Phase 3 (Upcoming)
-- Billing calculation
-- Load and billing summaries
-- Enhanced validation
+### Phase 3 (Current) ✅
+- ✅ Set electricity tariff rate
+- ✅ Calculate billing costs
+- ✅ Display detailed billing summary
+- ✅ Per-appliance cost breakdown
+- ✅ Enhanced input validation
+
+### Phase 3 ✅
+- ✅ Set electricity tariff rate
+- ✅ Calculate billing costs
+- ✅ Display detailed billing summary
+- ✅ Per-appliance cost breakdown
+- ✅ Enhanced input validation
 
 ### Phase 4 (Upcoming)
 - File saving and loading
