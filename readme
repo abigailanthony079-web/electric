@@ -1,0 +1,73 @@
+1. Background and Problem Scenario Electrical engineers routinely analyse electrical loads, energy consumption, and billing estimates. In many cases, these calculations are done manually or using simple spreadsheets, which can lead to errors and inefficiencies. This assignment requires students to design and implement a C++ program that simulates electrical load monitoring and electricity billing for a small facility or household. 
+
+2. Assignment Type and Rules 
+• This is an individual assignment or a team of two students maximum
+ • All submitted work must be original 
+• GitHub must be used for version control and submission
+ • The repository must show steady progress over four weeks
+ • Late submissions attract penalties 
+3. Learning Objectives
+ • Apply C++ programming concepts to an electrical engineering problem
+ • Model electrical loads using variables, arrays, and classes 
+• Implement energy and cost calculations correctly 
+• Design a menu-driven console application
+ • Practice professional software development using GitHub 
+4. Technical Requirements 
+• Programming Language: C++ 
+• User Interface: Console-based 
+• Data Storage: Text files using fstream 
+• Platform: Windows (offline operation required)
+
+ 5. Functional Requirements
+ 5.1 Appliance Management
+ 1. Register electrical appliances 
+2. View all registered appliances
+ 3. Search appliance by name 
+
+5.2 Load and Energy Calculation 
+1. Store appliance power rating in watts 
+2. Store daily usage time in hours 
+3. Compute energy consumption in kilowatt-hours (kWh) 
+4. Compute total energy consumption for all appliances 
+
+5.3 Billing Calculation 
+1. Accept electricity tariff per kWh 
+2. Calculate total electricity cost 
+3. Display detailed billing summary
+
+ 5.4 File Storage
+ • Save appliance data to file
+ • Load appliance data when the program restarts 
+• Save billing summaries if required 
+
+6. Data Validation Rules
+ • Appliance name must not be empty 
+• Power rating must be greater than zero
+ • Usage hours must be between 0 and 24 
+• Tariff value must be positive 
+• Invalid menu choices must be handled gracefully 
+7. Weekly Timeline and Milestones 
+
+Phase 1
+ • Create GitHub repository and initial project structure 
+• Implement Appliance class
+ • Register and view appliances 
+• Minimum of 3 meaningful commits 
+Phase 2
+ • Implement energy calculation logic
+ • Store multiple appliances using arrays 
+• Build menu-driven program flow
+ • Minimum of 3 meaningful commits 
+Phase 3 
+• Implement billing calculation
+ • Display load and billing summaries 
+• Improve input validation
+ • Minimum of 3 meaningful commits 
+Phase 4
+ • Implement file saving and loading
+ • Refactor code for clarity and structure 
+• Complete README documentation
+ • Final testing and submission 
+• Minimum of 3 meaningful commits 
+8. Sample Repository Structure electrical-load-monitoring/
+ │── main.cpp │── README.md │── appliances.txt │── billing_summary.txt
