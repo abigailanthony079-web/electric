@@ -82,13 +82,6 @@ electrical-load-monitoring/
 - ✅ Per-appliance cost breakdown
 - ✅ Enhanced input validation
 
-### Phase 3 ✅
-- ✅ Set electricity tariff rate
-- ✅ Calculate billing costs
-- ✅ Display detailed billing summary
-- ✅ Per-appliance cost breakdown
-- ✅ Enhanced input validation
-
 ### Phase 4 (Upcoming)
 - File saving and loading
 - Code refactoring
