@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+#include <iomanip>
 using namespace std;
 
 // Appliance class to represent electrical appliances
@@ -52,12 +54,18 @@ void calculateTotalEnergy();
 void setTariffRate();
 void calculateBilling();
 void displayBillingSummary();
+void saveAppliancesToFile();
+void loadAppliancesFromFile();
+void saveBillingSummaryToFile();
 void displayMenu();
 
 int main() {
     int choice;
     
     cout << "=== Electrical Load Monitoring System ===" << endl;
+    
+    // Load existing appliances from file at startup
+    loadAppliancesFromFile();
     
     while (true) {
         displayMenu();
@@ -96,10 +104,17 @@ int main() {
                 displayBillingSummary();
                 break;
             case 8:
-                cout << "Exiting program. Goodbye!" << endl;
+                saveAppliancesToFile();
+                break;
+            case 9:
+                saveBillingSummaryToFile();
+                break;
+            case 10:
+                cout << "Saving data and exiting program. Goodbye!" << endl;
+                saveAppliancesToFile();
                 return 0;
             default:
-                cout << "Invalid choice! Please select 1-8." << endl;
+                cout << "Invalid choice! Please select 1-10." << endl;
         }
         
         cout << endl;
@@ -117,7 +132,9 @@ void displayMenu() {
     cout << "5. Set Electricity Tariff Rate" << endl;
     cout << "6. Calculate Billing" << endl;
     cout << "7. Display Detailed Billing Summary" << endl;
-    cout << "8. Exit" << endl;
+    cout << "8. Save Appliances to File" << endl;
+    cout << "9. Save Billing Summary to File" << endl;
+    cout << "10. Exit" << endl;
 }
 
 void registerAppliance() {
@@ -316,4 +333,122 @@ void displayBillingSummary() {
     cout << "Total Monthly Cost: " << totalDailyCost * 30 << endl;
     cout << "Total Yearly Cost: " << totalDailyCost * 365 << endl;
     cout << "========================================" << endl;
+}
+
+
+void saveAppliancesToFile() {
+    ofstream outFile("appliances.txt");
+    
+    if (!outFile) {
+        cout << "Error: Unable to open file for writing!" << endl;
+        return;
+    }
+    
+    // Save tariff rate first
+    outFile << tariffRate << endl;
+    
+    // Save number of appliances
+    outFile << appliances.size() << endl;
+    
+    // Save each appliance data
+    for (size_t i = 0; i < appliances.size(); i++) {
+        outFile << appliances[i].getName() << endl;
+        outFile << appliances[i].getPowerRating() << endl;
+        outFile << appliances[i].getUsageHours() << endl;
+    }
+    
+    outFile.close();
+    cout << "Appliances saved successfully to appliances.txt" << endl;
+}
+
+void loadAppliancesFromFile() {
+    ifstream inFile("appliances.txt");
+    
+    if (!inFile) {
+        cout << "No previous data found. Starting fresh." << endl;
+        return;
+    }
+    
+    // Load tariff rate
+    inFile >> tariffRate;
+    inFile.ignore(); // Ignore newline
+    
+    // Load number of appliances
+    int count;
+    inFile >> count;
+    inFile.ignore(); // Ignore newline
+    
+    // Load each appliance
+    for (int i = 0; i < count; i++) {
+        string name;
+        double power, hours;
+        
+        getline(inFile, name);
+        inFile >> power;
+        inFile >> hours;
+        inFile.ignore(); // Ignore newline
+        
+        Appliance app(name, power, hours);
+        appliances.push_back(app);
+    }
+    
+    inFile.close();
+    cout << "Loaded " << count << " appliance(s) from file." << endl;
+    if (tariffRate > 0) {
+        cout << "Tariff rate: " << tariffRate << " per kWh" << endl;
+    }
+}
+
+void saveBillingSummaryToFile() {
+    if (appliances.empty()) {
+        cout << "\nNo appliances registered yet." << endl;
+        return;
+    }
+    
+    if (tariffRate <= 0) {
+        cout << "\nPlease set the tariff rate first (Option 5)." << endl;
+        return;
+    }
+    
+    ofstream outFile("billing_summary.txt");
+    
+    if (!outFile) {
+        cout << "Error: Unable to open file for writing!" << endl;
+        return;
+    }
+    
+    outFile << "========================================" << endl;
+    outFile << "    DETAILED BILLING SUMMARY" << endl;
+    outFile << "========================================" << endl;
+    outFile << "Tariff Rate: " << tariffRate << " per kWh" << endl;
+    outFile << "----------------------------------------" << endl;
+    
+    double totalEnergy = 0.0;
+    
+    for (size_t i = 0; i < appliances.size(); i++) {
+        double energy = appliances[i].calculateEnergy();
+        double cost = energy * tariffRate;
+        totalEnergy += energy;
+        
+        outFile << "\nAppliance #" << (i + 1) << ": " << appliances[i].getName() << endl;
+        outFile << "  Power: " << appliances[i].getPowerRating() << " W" << endl;
+        outFile << "  Usage: " << appliances[i].getUsageHours() << " hours/day" << endl;
+        outFile << "  Energy: " << fixed << setprecision(2) << energy << " kWh/day" << endl;
+        outFile << "  Daily Cost: " << fixed << setprecision(2) << cost << endl;
+        outFile << "  Monthly Cost: " << fixed << setprecision(2) << cost * 30 << endl;
+    }
+    
+    double totalDailyCost = totalEnergy * tariffRate;
+    
+    outFile << "\n========================================" << endl;
+    outFile << "TOTAL CONSUMPTION & COST" << endl;
+    outFile << "========================================" << endl;
+    outFile << "Total Daily Energy: " << fixed << setprecision(2) << totalEnergy << " kWh" << endl;
+    outFile << "Total Daily Cost: " << fixed << setprecision(2) << totalDailyCost << endl;
+    outFile << "Total Monthly Cost: " << fixed << setprecision(2) << totalDailyCost * 30 << endl;
+    outFile << "Total Yearly Cost: " << fixed << setprecision(2) << totalDailyCost * 365 << endl;
+    outFile << "========================================" << endl;
+    
+    outFile.close();
+    cout << "Billing summary saved successfully to billing_summary.txt" << endl;
 }

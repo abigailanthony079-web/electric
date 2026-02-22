@@ -1,0 +1,21 @@
+========================================
+    DETAILED BILLING SUMMARY
+========================================
+Tariff Rate: 23 per kWh
+----------------------------------------
+
+Appliance #1: mike
+  Power: 345 W
+  Usage: 24 hours/day
+  Energy: 8.28 kWh/day
+  Daily Cost: 190.44
+  Monthly Cost: 5713.20
+
+========================================
+TOTAL CONSUMPTION & COST
+========================================
+Total Daily Energy: 8.28 kWh
+Total Daily Cost: 190.44
+Total Monthly Cost: 5713.20
+Total Yearly Cost: 69510.60
+========================================

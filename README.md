@@ -35,16 +35,17 @@ electrical_monitor.exe
 
 ## Usage Instructions
 
-1. Run the program
+1. Run the program (data loads automatically from appliances.txt if it exists)
 2. Select option 1 to register an appliance
-3. Enter appliance details (name, power rating in watts, daily usage in hours)
-4. Select option 2 to view all registered appliances
-5. Select option 3 to search for a specific appliance by name
-6. Select option 4 to calculate total energy consumption (daily, monthly, yearly)
-7. Select option 5 to set the electricity tariff rate (per kWh)
-8. Select option 6 to calculate billing costs
-9. Select option 7 to display detailed billing summary with per-appliance breakdown
-10. Select option 8 to exit
+3. Select option 2 to view all registered appliances
+4. Select option 3 to search for a specific appliance by name
+5. Select option 4 to calculate total energy consumption (daily, monthly, yearly)
+6. Select option 5 to set the electricity tariff rate (per kWh)
+7. Select option 6 to calculate billing costs
+8. Select option 7 to display detailed billing summary with per-appliance breakdown
+9. Select option 8 to manually save appliances to file
+10. Select option 9 to save billing summary to file
+11. Select option 10 to exit (automatically saves data)
 
 ## Data Validation
 - Appliance name cannot be empty
@@ -55,9 +56,11 @@ electrical_monitor.exe
 ## Project Structure
 ```
 electrical-load-monitoring/
-├── main.cpp           # Main program file
-├── README.md          # Project documentation
-└── readme             # Assignment requirements
+├── main.cpp              # Main program file
+├── README.md             # Project documentation
+├── readme                # Assignment requirements
+├── appliances.txt        # Saved appliance data (auto-generated)
+└── billing_summary.txt   # Saved billing reports (auto-generated)
 ```
 
 ## Development Timeline
@@ -75,12 +78,19 @@ electrical-load-monitoring/
 - ✅ Display daily, monthly, and yearly energy totals
 - ✅ Enhanced menu system
 
-### Phase 3 (Current) ✅
+### Phase 3 ✅
 - ✅ Set electricity tariff rate
 - ✅ Calculate billing costs
 - ✅ Display detailed billing summary
 - ✅ Per-appliance cost breakdown
 - ✅ Enhanced input validation
+
+### Phase 4 (Current) ✅
+- ✅ Save appliances to file (appliances.txt)
+- ✅ Load appliances automatically on startup
+- ✅ Save billing summary to file (billing_summary.txt)
+- ✅ Persistent data storage with fstream
+- ✅ Auto-save on exit
 
 ### Phase 3 ✅
 - ✅ Set electricity tariff rate
@@ -89,10 +99,13 @@ electrical-load-monitoring/
 - ✅ Per-appliance cost breakdown
 - ✅ Enhanced input validation
 
-### Phase 4 (Upcoming)
-- File saving and loading
-- Code refactoring
-- Final testing
+### Phase 4 ✅
+- ✅ Save appliances to file (appliances.txt)
+- ✅ Load appliances automatically on startup
+- ✅ Save billing summary to file (billing_summary.txt)
+- ✅ Persistent data storage with fstream
+- ✅ Auto-save on exit
+- ✅ Code refactoring and final testing
 
 ## Author
 [Your Name]
