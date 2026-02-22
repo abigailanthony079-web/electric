@@ -12,12 +12,27 @@ A C++ console application for monitoring electrical loads and calculating electr
 - ✅ Menu-driven console interface
 - ✅ Input validation for all fields
 
-### Phase 2 (Current) ✅
+### Phase 2 ✅
 - ✅ Energy calculation logic (kWh)
 - ✅ Search appliance by name
 - ✅ Calculate total energy consumption
 - ✅ Display daily, monthly, and yearly energy totals
 - ✅ Enhanced menu system
+
+### Phase 3 ✅
+- ✅ Set electricity tariff rate
+- ✅ Calculate billing costs
+- ✅ Display detailed billing summary
+- ✅ Per-appliance cost breakdown
+- ✅ Enhanced input validation
+
+### Phase 4 ✅
+- ✅ Save appliances to file (appliances.txt)
+- ✅ Load appliances automatically on startup
+- ✅ Save billing summary to file (billing_summary.txt)
+- ✅ Persistent data storage with fstream
+- ✅ Auto-save on exit
+- ✅ Code refactoring and final testing
 
 ## How to Compile and Run
 
@@ -72,40 +87,26 @@ electrical-load-monitoring/
 - Input validation
 
 ### Phase 2 ✅
-- ✅ Energy calculation logic (kWh)
-- ✅ Search appliance by name
-- ✅ Calculate total energy consumption
-- ✅ Display daily, monthly, and yearly energy totals
-- ✅ Enhanced menu system
+- Energy calculation logic (kWh)
+- Search appliance by name
+- Calculate total energy consumption
+- Display daily, monthly, and yearly energy totals
+- Enhanced menu system
 
 ### Phase 3 ✅
-- ✅ Set electricity tariff rate
-- ✅ Calculate billing costs
-- ✅ Display detailed billing summary
-- ✅ Per-appliance cost breakdown
-- ✅ Enhanced input validation
-
-### Phase 4 (Current) ✅
-- ✅ Save appliances to file (appliances.txt)
-- ✅ Load appliances automatically on startup
-- ✅ Save billing summary to file (billing_summary.txt)
-- ✅ Persistent data storage with fstream
-- ✅ Auto-save on exit
-
-### Phase 3 ✅
-- ✅ Set electricity tariff rate
-- ✅ Calculate billing costs
-- ✅ Display detailed billing summary
-- ✅ Per-appliance cost breakdown
-- ✅ Enhanced input validation
+- Set electricity tariff rate
+- Calculate billing costs
+- Display detailed billing summary
+- Per-appliance cost breakdown
+- Enhanced input validation
 
 ### Phase 4 ✅
-- ✅ Save appliances to file (appliances.txt)
-- ✅ Load appliances automatically on startup
-- ✅ Save billing summary to file (billing_summary.txt)
-- ✅ Persistent data storage with fstream
-- ✅ Auto-save on exit
-- ✅ Code refactoring and final testing
+- Save appliances to file (appliances.txt)
+- Load appliances automatically on startup
+- Save billing summary to file (billing_summary.txt)
+- Persistent data storage with fstream
+- Auto-save on exit
+- Code refactoring and final testing
 
 ## Author
 [Your Name]
